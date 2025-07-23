@@ -1,0 +1,47 @@
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="patrocinadores" >
+
+    <!-- Coluna do ID -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <!-- Coluna do nome -->
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef> Nome </th>
+      <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+    </ng-container>
+
+    <!-- Coluna da representanteNome -->
+    <ng-container matColumnDef="representanteNome">
+      <th mat-header-cell *matHeaderCellDef> Nome do Representante </th>
+      <td mat-cell *matCellDef="let element"> {{element.representanteNome}} </td>
+    </ng-container>
+
+
+    <!-- Coluna da status -->
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef> Status </th>
+      <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+    </ng-container>
+
+
+    <!-- Coluna Opções -->
+    <ng-container matColumnDef="opcoes">
+      <th mat-header-cell *matHeaderCellDef> Opções </th>
+      <td mat-cell *matCellDef="let element">
+        <a href="#" [routerLink]="['/patrocinador-ver', element.id]" class="btn btn-info">Ver</a>
+        <a href="#" [routerLink]="['/patrocinador-atualizar', element.id]" class="btn btn-primary">Editar</a>
+
+        <button type="button" (click)= "apagarPatrocinador(element.id)" class="btn btn-danger">Apagar</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+</div>
+
+<a href="#" routerLink="/patrocinador-criar" class="btn btn-success">Criar novo patrocinador</a>

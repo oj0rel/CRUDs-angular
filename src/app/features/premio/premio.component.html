@@ -1,0 +1,52 @@
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="premios" >
+
+    <!-- Coluna do ID -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <!-- Coluna da descricao -->
+    <ng-container matColumnDef="descricao">
+      <th mat-header-cell *matHeaderCellDef> Descrição </th>
+      <td mat-cell *matCellDef="let element"> {{element.descricao}} </td>
+    </ng-container>
+
+    <!-- Coluna da ordemPremiacao -->
+    <ng-container matColumnDef="ordemPremiacao">
+      <th mat-header-cell *matHeaderCellDef> Ordem da Premiação </th>
+      <td mat-cell *matCellDef="let element"> {{element.ordemPremiacao}} </td>
+    </ng-container>
+
+    <!-- Coluna da categoria -->
+    <ng-container matColumnDef="categoria">
+      <th mat-header-cell *matHeaderCellDef> Categoria </th>
+      <td mat-cell *matCellDef="let element"> {{element.categoria}} </td>
+    </ng-container>
+
+    <!-- Coluna da status -->
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef> Status </th>
+      <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+    </ng-container>
+
+
+    <!-- Coluna Opções -->
+    <ng-container matColumnDef="opcoes">
+      <th mat-header-cell *matHeaderCellDef> Opções </th>
+      <td mat-cell *matCellDef="let element">
+        <a href="#" [routerLink]="['/premio-ver', element.id]" class="btn btn-info">Ver</a>
+        <a href="#" [routerLink]="['/premio-atualizar', element.id]" class="btn btn-primary">Editar</a>
+
+        <button type="button" (click)= "apagarPremio(element.id)" class="btn btn-danger">Apagar</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+</div>
+
+<a href="#" routerLink="/premio-criar" class="btn btn-success">Criar novo Prêmio</a>

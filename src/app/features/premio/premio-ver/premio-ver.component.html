@@ -1,0 +1,35 @@
+<div class="container">
+  <h1>Ver Prêmio</h1>
+
+  <a href="#" routerLink="/patrocinador" class="btn btn-primary">Voltar</a>
+
+  @if (premio) {
+    <div>
+      <strong>Id:</strong>
+      <p>{{ premio.id }}</p>
+    </div>
+
+    <div>
+      <strong>Descrição:</strong>
+      <p>{{ premio.descricao }}</p>
+    </div>
+
+    <div>
+      <strong>Ordem da Premiação:</strong>
+      <p>{{ premio.ordemPremiacao }}</p>
+    </div>
+
+    <div>
+      <strong>Categoria:</strong>
+      <p>{{ premio.categoria }}</p>
+    </div>
+
+    <div>
+      <strong>Status:</strong>
+      <p>{{ premio.status }}</p>
+    </div>
+
+  } @else {
+    <p>Carregando Prêmio...</p>
+  }
+</div>

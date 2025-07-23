@@ -1,0 +1,56 @@
+<div class="container">
+  <h1>Criação de Novo Patrocinador</h1>
+
+  <a href="#" routerLink="/patrocinador" class="btn btn-primary">Voltar</a>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+
+    <!-- campo-nome -->
+    <div class="form-group">
+      <label for="assunto">Nome:</label>
+      <input
+        formControlName="nome"
+        id= "nome"
+        type="text"
+        class="form-control">
+      <div *ngIf="f['nome'].touched && f['nome'].invalid" class="alert alert-danger">
+        <div *ngIf="f['nome'].errors && f['nome'].errors['required']">O nome do Patrocinador é necessário.</div>
+      </div>
+    </div>
+
+    <!-- campo-representanteNome -->
+    <div class="form-group">
+      <label for="corpo">Representante Nome:</label>
+      <textarea
+        formControlName="representanteNome"
+        id="representanteNome"
+        type="text"
+        class="form-control">
+      </textarea>
+      <div *ngIf="f['representanteNome'].touched && f['representanteNome'].invalid" class="alert alertdanger">
+        <div *ngIf="f['representanteNome'].errors && f['representanteNome'].errors['required']">Precisa digitar o nome de um representante.</div>
+      </div>
+    </div>
+
+    <!-- campo-status -->
+    <div class="form-group">
+      <label for="corpo">Status</label>
+        <select
+          formControlName="status"
+          id="status"
+          type="text"
+          class="form-control">
+          <option value="">Selecione</option>
+          <option *ngFor="let status of statusOptions" [value]="status.id">
+            {{ status.descricao }}
+          </option>
+        </select>
+
+        <div *ngIf="f['status'].touched && f['status'].invalid" class="alert alertdanger">
+        <div *ngIf="f['status'].errors && f['status'].errors['required']">Insira o status do Patrocinador.</div>
+      </div>
+    </div>
+
+    <br/>
+    <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Salvar</button>
+  </form>
+</div>
