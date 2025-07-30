@@ -1,3 +1,14 @@
-<button type="button" class="btn btn-info" [routerLink]="['/patrocinador']">Patrocinador</button>
-<button type="button" class="btn btn-info" [routerLink]="['/premio']">Prêmio</button>
-<router-outlet />
+<!-- Menu lateral + conteúdo -->
+<div class="d-flex" style="min-height: calc(100vh - 80px);">
+  <!-- Menu lateral preto -->
+  <nav class="bg-secondary p-3 d-flex flex-column" style="width: 200px;">
+    <img src="pato.png" width="80" height="80" class="d-inline-block align-center" alt="">
+    <button type="button" class="btn btn-info mb-2" [routerLink]="['/patrocinador']">PATROCINADOR</button>
+    <button type="button" class="btn btn-info" [routerLink]="['/premio']">PRÊMIO</button>
+  </nav>
+
+  <!-- Conteúdo principal -->
+  <div class="flex-grow-1 p-4">
+    <router-outlet></router-outlet>
+  </div>
+</div>

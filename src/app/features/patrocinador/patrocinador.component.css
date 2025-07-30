@@ -1,3 +1,10 @@
 .btn {
     margin: 10px;
 }
+
+.fundo-cabecalho {
+    background-color: #CFF4FC;
+    color: #0c5460;
+    font-weight: bold;
+    font-size: medium;
+}

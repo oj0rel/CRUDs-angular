@@ -1,30 +1,40 @@
-<div class="container">
-  <h1>Ver Patrocinador</h1>
+<div class="container-fluid">
+  <div class="px-3">
+    <div class="d-flex flex-column flex-md-row align-items-center mx-auto px-3 py-4 bloco-todo" style="max-width: 580px;">
+      <div class="flex-shrink-0" style="width: 200px; height: 200px;">
+        <img src="pessoa.png" alt="imagem-da-pessoa" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <div class="flex-grow-1 ms-md-3 mt-3 mt-md-0">
 
-  <a href="#" routerLink="/patrocinador" class="btn btn-primary">Voltar</a>
+        <h1>Ver Patrocinador</h1>
 
-  @if (patrocinador) {
-    <div>
-      <strong>Id:</strong>
-      <p>{{ patrocinador.id }}</p>
+        @if (patrocinador) {
+          <div>
+            <strong>Id:</strong>
+            <p>{{ patrocinador.id }}</p>
+          </div>
+
+          <div>
+            <strong>Nome:</strong>
+            <p>{{ patrocinador.nome }}</p>
+          </div>
+
+          <div>
+            <strong>Nome do Representante:</strong>
+            <p>{{ patrocinador.representanteNome }}</p>
+          </div>
+
+          <div>
+            <strong>Status:</strong>
+            <p>{{ patrocinador.status }}</p>
+          </div>
+
+        } @else {
+          <p>Carregando Patrocinador...</p>
+        }
+
+        <a href="#" routerLink="/patrocinador" class="btn btn-primary">Voltar</a>
+      </div>
     </div>
-
-    <div>
-      <strong>Nome:</strong>
-      <p>{{ patrocinador.nome }}</p>
-    </div>
-
-    <div>
-      <strong>Nome do Representante:</strong>
-      <p>{{ patrocinador.representanteNome }}</p>
-    </div>
-
-    <div>
-      <strong>Status:</strong>
-      <p>{{ patrocinador.status }}</p>
-    </div>
-
-  } @else {
-    <p>Carregando Patrocinador...</p>
-  }
+  </div>
 </div>
