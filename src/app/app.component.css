@@ -1,3 +1,13 @@
-.btn-info {
+.btn {
+    background-color: #F0AD4E;
     margin: 10px;
+}
+
+.coluna {
+    background-color: #31D2F2;
+}
+
+.btn:hover {
+    background-color: #ec971f;
+    transform: scale(1.05);
 }
